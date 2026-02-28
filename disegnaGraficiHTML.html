@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS.css">
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>//traduce i testi in funzioni
+    </head>
+    <body>
+        <div class="barraSuperiore">
+            <p class="titolo">STEFANO_SITO<sup>TM</sup></p>
+            <a href="Home.html" class="linkPagina">Home</a>
+        </div>
+
+        <div class="rettangoloGrande">
+            <div class="rettangoloPiccolo">
+                <canvas id="Canvas" width="500" height="500"></canvas>
+            </div>
+
+            <button class="pulsante" id="pulsanteDisegna">Disegna</button>
+
+            <div>
+                <input type="text" class="scrittaStatistiche" id="testoFunzione" value="x^2 + 3">
+            </div>
+
+            <div class="nomeCoso" id="nomeCoso">Disegna grafici</div>
+
+        </div>
+        
+        <script src="DisegnaGrafici.js"></script>
+    </body>
+</html>

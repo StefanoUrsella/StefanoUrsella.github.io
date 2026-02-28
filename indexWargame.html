@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="titolo">UNTITLED FANTASY WARGAME<sup>TM</sup></h1>
+    <a href="Home.html">Home</a>
+
+    <div class="contenitoreStatistiche">
+        <div class="colonnaStatisticaSinistra">
+            //TRUPPA1
+            <p class="paragrafo">HP</p>
+            <input class="inputStat" id="inputHP1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">DANNO</p>
+            <input class="inputStat" id="inputDANNO1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">DIFESA</p>
+            <input class="inputStat" id="inputDIFESA1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">ATTACCO</p>
+            <input class="inputStat" id="inputATTACCO1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">ATTACCHI</p>
+            <input class="inputStat" id="inputATTACCHI1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">MORALE</p>
+            <input class="inputStat" id="inputMORALE1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">TRUPPE INIZIALI</p>
+            <input class="inputStat" id="inputTruppeIniziali1" type="number" placeholder="inserire valori">
+
+            <p class="paragrafo">TRUPPE</p>
+            <input class="inputStat" id="inputTRUPPE1" type="number" placeholder="inserire valori">
+            <p class="paragrafo">MORALE RIMASTO</p>
+            <p class="paragrafo" id="moraleRimasto1"></p>
+        </div>
+
+        <div class="colonnaStatisticaDestra">
+            //TRUPPA2
+            <p class="paragrafo">HP</p>
+            <input class="inputStat" id="inputHP2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">DANNO</p>
+            <input class="inputStat" id="inputDANNO2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">DIFESA</p>
+            <input class="inputStat" id="inputDIFESA2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">ATTACCO</p>
+            <input class="inputStat" id="inputATTACCO2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">ATTACCHI</p>
+            <input class="inputStat" id="inputATTACCHI2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">MORALE</p>
+            <input class="inputStat" id="inputMORALE2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">TRUPPE INIZIALI</p>
+            <input class="inputStat" id="inputTruppeIniziali2" type="number" placeholder="inserire valori">
+            
+            <p class="paragrafo">TRUPPE</p>
+            <input class="inputStat" id="inputTRUPPE2" type="number" placeholder="inserire valori">
+            <p class="paragrafo">MORALE RIMASTO</p>
+            <p class="paragrafo" id="moraleRimasto2"></p>
+        </div>
+    </div>
+
+
+    //DADI
+    <div id="gruppoCombattimenti">
+        <div class="zonaLancio">
+            <div id="contenitoreDadiAttacco1" class="contenitoreDadiAttacco">
+                <p class="etichetta-testoS" id="modificatoreAttacco1">0</p>
+            </div>
+            <div id="contenitoreDadiDifesa1" class="contenitoreDadiDifesa">
+                <p class="etichetta-testoS" id="modificatoreDifesa1">0</p>
+            </div>
+        </div>
+
+        <div class="zonaLancio">
+            <div id="contenitoreDadiAttacco2" class="contenitoreDadiAttacco">
+                <p class="etichetta-testoD" id="modificatoreAttacco2">0</p>
+            </div>
+            <div id="contenitoreDadiDifesa2" class="contenitoreDadiDifesa">
+                <p class="etichetta-testoD" id="modificatoreDifesa2">0</p>
+            </div>
+        </div>
+
+        <div class="zonaMorale">
+            <div id="contenitoreDadiMorale" class="contenitoreDadiMorale">
+                <p class="etichetta-testoS" id="modificatoreMorale1">0</p>
+                <p class="etichetta-testoD" id="modificatoreMorale2">0</p>
+            </div>
+        </div>
+
+        <div class="zonaComandi">
+            <button class="buttonRissa" id="buttonRissa">RISSA</button>
+            <button class="buttonMorale" id="buttonMorale">MORALE</button>
+        </div>
+
+        <div id="boxRisultato" class="boxRisultato"></div>
+
+    </div>
+
+    <script src="codice.js"></script>
+    
+</body>
+</html>

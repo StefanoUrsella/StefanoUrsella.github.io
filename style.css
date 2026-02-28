@@ -1,0 +1,296 @@
+body{
+    background-color: black;
+}
+
+.titolo{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.scritta{
+    color: white;
+}
+
+.buttonRissa{
+    background-color: red;
+    color: black;
+    padding: 10px;
+}
+
+.buttonMorale{
+    background-color: rgb(4, 255, 0);
+    color: black;
+    padding: 10px;
+}
+
+.paragrafo{
+    color: white;
+}
+
+.inputStat{
+    background-color: white;
+    color: black;
+}
+
+.contenitoreStatistiche {
+    display: flex;/*affiancare le cose*/
+    justify-content: space-between;/*mette i suoi contenuti schiacciati ai due estremi dello schermo*/
+}
+
+.colonnaStatistica {
+    display: flex;
+    flex-direction: column;/*impila gli imput verticalmente*/
+    gap: 5px;/*spazio tra i cosi impilati*/
+}
+
+
+
+#gruppoCombattimenti {
+    position: absolute;/*così non segue lo schermo se scrollo in alto o in basso*/
+    top: 100px;/*altezza del blocco*/
+    left: 50%;/*posizione a metà schermo orizzontale*/
+    transform: translateX(-50%);
+    z-index: 10000;/*così è sopra a tutto e nulla lo copre*/
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;/*due colonne*/
+    justify-items: center;/*le robe di allineano al centro*/
+    column-gap: 50px;/*distanza orizzontale*/
+    row-gap: 0px;/*distanza verticale, è solo 0px perché sennò TUTTO sarebbe distanziato di 50px, io non lo voglio quindi lo metto manualmente per ogni coso*/
+}
+
+/*Il 3°(.zonaMorale), il 4°(.zonaComandi) e il 5°(.boxRisultato) elemento di "#gruppoCombattimenti"-->occupano una larghezza 2 nella griglia*/
+#gruppoCombattimenti > :nth-child(3),
+#gruppoCombattimenti > :nth-child(4),
+#gruppoCombattimenti > :nth-child(5){
+    grid-column: span 2;
+}
+
+.zonaLancio {
+    display: flex;
+    flex-direction: column;/*così li impila invece che affiancarli*/
+    align-items: center;/*allinea i contenitori al centro*/
+    gap: 20px;/*spaizo tra il contenitore attacco e difesa*/
+    margin-top: 50px;/*distanza sopra, compensa per il "0px" del "#gruppoCombattimenti"*/
+}
+
+.zonaMorale{
+    display: flex;
+    flex-direction: column;/*così li impila invece che affiancarli*/
+    align-items: center;/*allinea i contenitori al centro*/
+    margin-top: 20px;/*distanza dai cosi dei lanci*/
+}
+
+.zonaComandi{
+    display: flex;
+    /*flex-direction: column;/*così li impila invece che affiancarli*/
+    align-items: center;/*allinea i contenitori al centro*/
+    gap: 5px;/*spaizo tra i vari pulsanti e campi*/
+    margin-top: 10px;/*distanza dal Morale*/
+}
+
+.contenitoreDadiAttacco {
+    position: relative;
+    
+    display: flex;/*così si affiancano invece che sovrapporsi*/
+    flex-wrap: wrap;/*va a capo se esce dalla width*/
+    width: 350px;/*larghezza dopo la quale va a capo*/
+    justify-content: center;/*quando va a capo-->si allinea al centro*/
+
+    gap: 10px;/*spazio tra un dado e l'altro*/
+
+    background-color: rgba(255, 0, 0, 0.1);/*sfondo per contenere i dadi*/
+    border: 3px solid rgb(138, 0, 0);/*Contorno del Rettangolo*/
+    border-radius: 15px;/*per arrotondare gli angoli*/
+    padding: 20px;/*spazio tra i dadi e il bordo del rettangolo*/
+    box-shadow: 0 0 15px rgba(250, 78, 78, 0.5); /*effetto "balgiore/ombra" esterno*/
+    min-height: 80px;/*altezza minima del rettangolo se non ci sono dadi dentro*/
+}
+
+.dadoAttacco {
+    width: 60px;
+    height: 60px;
+    background: rgb(247, 5, 5);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.contenitoreDadiDifesa {
+    position: relative;
+    
+    display: flex;/*così si affiancano invece che sovrapporsi*/
+    flex-wrap: wrap;/*va a capo se esce dalla width*/
+    width: 350px;/*larghezza dopo la quale va a capo*/
+    justify-content: center;/*quando va a capo-->si allinea al centro*/
+
+    gap: 10px;/*spazio tra un dado e l'altro*/
+
+    background-color: rgba(17, 0, 255, 0.1);/*sfondo per contenere i dadi*/
+    border: 3px solid rgb(0, 60, 138);/*Contorno del Rettangolo*/
+    border-radius: 15px;/*per arrotondare gli angoli*/
+    padding: 20px;/*spazio tra i dadi e il bordo del rettangolo*/
+    box-shadow: 0 0 15px rgba(78, 124, 250, 0.5); /*effetto "balgiore/ombra" esterno*/
+    min-height: 80px;/*altezza minima del rettangolo se non ci sono dadi dentro*/
+}
+
+.dadoDifesa {
+    width: 60px;
+    height: 60px;
+    background: rgb(5, 9, 247);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.contenitoreDadiMorale {
+    position: relative;
+    
+    display: flex;/*così si affiancano invece che sovrapporsi*/
+    flex-wrap: wrap;/*va a capo se esce dalla width*/
+    width: 350px;/*larghezza dopo la quale va a capo*/
+    justify-content: center;/*quando va a capo-->si allinea al centro*/
+
+    gap: 10px;/*spazio tra un dado e l'altro*/
+
+    background-color: rgba(39, 244, 7, 0.299);/*sfondo per contenere i dadi*/
+    border: 3px solid rgba(75, 214, 11, 0.856);/*Contorno del Rettangolo*/
+    border-radius: 15px;/*per arrotondare gli angoli*/
+    padding: 20px;/*spazio tra i dadi e il bordo del rettangolo*/
+    box-shadow: 0 0 15px rgba(124, 250, 78, 0.5); /*effetto "balgiore/ombra" esterno*/
+    min-height: 80px;/*altezza minima del rettangolo se non ci sono dadi dentro*/
+}
+
+.dadoMorale {
+    width: 60px;
+    height: 75px;
+    background: rgb(6, 208, 9);
+
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);/*per dare la forma "a diamante*/
+    
+    /*Con il "clip-path" i bordi stantdard non funzionano-->uso una "box-shadow" interna"*/
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+    
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+}
+
+/*etichette a sinistra*/
+.etichetta-testoS {
+    position: absolute;
+    top: 10px;
+    left: -80px;/*per far sporgere a Sinistra di 80px*/
+    width: 70px;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 8px 0 0 8px;/*arrotondare i bordi esterni*/
+    margin: 0;
+}
+
+/*etichette a destra*/
+.etichetta-testoD {
+    position: absolute;
+    top: 10px;
+    right: -80px;/*per far sporgere a Destra di 80px*/
+    width: 70px;
+    height: 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 0 8px 8px 0;/*arrotondare i bordi esterni*/
+    margin: 0;
+}
+
+
+.contenitoreDadiAttacco .etichetta-testoS {/*vuol dire che questo si applica su ".etichetta-testoS" --> SOLO se è dentro a ".contenitoreDadiAttacco"*/
+    background-color: rgb(138, 0, 0);
+    border: 2px solid red;
+    border-right: none;
+}
+
+.contenitoreDadiAttacco .etichetta-testoD {
+    background-color: rgb(138, 0, 0);
+    border: 2px solid red;
+    border-left: none;
+}
+
+.contenitoreDadiDifesa .etichetta-testoS {
+    background-color: rgb(0, 60, 138);
+    border: 2px solid blue;
+    border-left: none;
+}
+
+.contenitoreDadiDifesa .etichetta-testoD {
+    background-color: rgb(0, 60, 138);
+    border: 2px solid blue;
+    border-left: none;
+}
+
+.contenitoreDadiMorale .etichetta-testoS{
+    background-color: rgb(40, 140, 15);
+    border: 2px solid rgba(43, 255, 0, 0.616);
+    visibility: hidden;
+}
+
+.contenitoreDadiMorale .etichetta-testoD{
+    background-color: rgb(40, 140, 15);
+    border: 2px solid rgba(43, 255, 0, 0.616);
+    visibility: hidden;
+}
+
+/* Assicuriamoci che i contenitori abbiano overflow visibile */
+.contenitoreDadiAttacco, .contenitoreDadiDifesa, .contenitoreDadiMorale {/*se c'è la virgola in mezzo-->è una cosa che fa a tutti, non è più la roba del "solo se è figlio di..."*/
+    position: relative;/*le tutti i figli che hanno "position: absolute" fanno riferimento e si basano sulla posizione di questo coso*/
+    overflow: visible;/*le cose che sporgono non vengono "tagliate*/
+}
+
+/*coso che contiene i testi per avvirare gli utenti*/
+.boxRisultato {
+    width: 300px;/*Larghezza*/
+    min-height: 40px;/*Altezza minima (si allunga se c'è tanto testo)*/
+    
+    background-color: white;
+    color: black;
+    
+    border: 2px solid black;/*bordo nero*/
+    border-radius: 10px;/*angoli arrotondati*/
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);/*Omra luminosa*/
+
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+
+    margin-top: 10px;/*distanza dalla ".zonaComandi"*/
+    display: flex;/*per gestire le varie robe per l'allineamento*/
+    justify-content: center;/*Centra Orizzontalmente il testo all'interno*/
+    align-items: center;/*Centra Verticalmente il testo all'interno*/
+    text-align: center;/*far andare il testo a capo*/
+    padding: 10px;/*distanza tra borrdi e testo*/
+}

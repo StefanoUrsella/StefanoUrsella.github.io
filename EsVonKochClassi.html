@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="barraSuperiore">
+            <p class="titolo">STEFANO_SITO<sup>TM</sup></p>
+            <a href="Home.html" class="linkPagina">Home</a>
+        </div>
+
+        <div class="rettangoloGrande">
+            <div class="rettangoloPiccolo">
+                <canvas id="Canvas" width="1000" height="1000"></canvas>
+            </div>
+
+            <div class="nomeCoso" id="nomeCoso">Fiocco di neve Von Koch</div>
+
+            <div class="scrittaStatistiche" id="scrittaStatistiche"></div>
+
+            <input type="range" class="slider" id="slider" min="0" max="9" value="0">
+            <div class="scrittaSlider" id="scrittaSlider">Iterazioni: 0</div>
+        </div>
+        
+        <script src="turtleClass.js"></script> <script src="EsVanKochDisegnareConClassi.js"></script>
+    </body>
+</html>
