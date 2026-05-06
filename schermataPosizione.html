@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styleStazione.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="barraSuperiore">
+            <p class="titolo">STAZIONE_AMBIENTALE<sup>TM</sup></p>
+            <a href="indexStazione.html" class="linkPagina">Home</a>
+        </div>
+
+        <div class="rettangoloGrande">
+            <div class="rettangoloPiccolo">
+                <canvas id="Canvas" width="500" height="500"></canvas>
+            </div>
+
+            <div class="titoloPagina" id="titoloPagina">Disegna grafici</div>
+
+
+            <table id="tabella">
+                <thead> <!--"thead" è la Prima Riga della Tabella-->
+                    <tr> <!--"tr" è la Riga della Tabella-->
+                        <th>ID</th>
+                        <th>Temperatura</th>
+                        <th>Umidità</th>
+                        <th>Luminosità</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabella"> <!--"tbody" è il Corpo della Tabella-->
+                </tbody>
+            </table>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="SchermataPosizione.js"></script>
+    </body>
+</html>
