@@ -76,14 +76,12 @@ function ordinaDati(arrayTutto){
     const arrayOrdinato = [];//Array con i "gruppDati"
     const arrayPosizioniFatte = [];
     for(let i=0 ; i<arrayTutto.length ; i++){
-        for(let j=0; j<=arrayPosizioniFatte.length ; j++){
             if(!arrayPosizioniFatte.includes(arrayTutto[i].position)){
                 arrayPosizioniFatte.push(arrayTutto[i].position);
                 let gruppoDati = new GruppoDati();
                 gruppoDati.position = arrayTutto[i].position;
                 arrayOrdinato.push(gruppoDati);
             }
-        }
     }
 
     for(let i=0; i<arrayTutto.length; i++){
